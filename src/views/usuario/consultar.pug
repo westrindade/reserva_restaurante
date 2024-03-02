@@ -6,22 +6,29 @@ block content
     include ../header
     hr
 
-    section
-      div.container
-        h2.text-center Buscar Usuário
-
-        form(id="buscarForm")
-          .mb-3
-            label.form-label(for="email") Email
-            .input-group
-              input#email.form-control(type="email", name="email", placeholder="SeuEmail@exemplo.com", required)
-              span.input-group-text(data-bs-toggle="tooltip", data-bs-placement="top", title="Exemplo: SeuEmail@exemplo.com") @exemplo.com
-
-          .d-grid.gap-2
-            button#buscarBtn.btn.btn-primary.btn-sm(type="button", style="width: 100%" onclick="onConsult()") Buscar
-            a.btn.btn-success.btn-sm(href="form/cadastrar", style="width: 100%") Novo Usuário
-            a.btn.btn-danger.btn-sm(type="button", href="/", style="width: 100%") Cancelar
-
-        //include result-list
-
-        //- script(src="/public/js/app/usuario.js")
+    div(class="container home-page")
+      //- section
+        //- div.container
+      h2.text-center Buscar Usuário
+      div(class="row justify-content-center")
+        div(class="col-md-7 col-sm-12")
+          div(id="alert-list" class="alert alert-danger d-none" role="alert")
+      form
+      div(class="row justify-content-center")
+        div(class="col-md-7 col-sm-12")
+          div(class="row")
+            div(class="col-md-7 col-sm-12")
+              div(class="form-group")
+                label(for="email" class="form-label") Email
+                input(id="email" type="email" class="form-control" placeholder="SeuEmail@exemplo.com" required)
+            div(class="col-md-4 col-sm-12 d-flex justify-content-md-start justify-content-center")
+              div(class="form-group d-flex")
+                button(id="consult-btn" type="button" class="btn btn-primary align-self-end" onclick="onConsult()") CONSULTAR&nbsp;&nbsp;
+                  span(id="icon-search" class="fa fa-search" aria-hidden="true")
+                  span(id="icon-loading" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true")
+          div(class="row text-center")
+            div(class="col-md-7 col-sm-12")
+              div(class="h-captcha" data-sitekey=`${HCAPTCHA_SITEKEY}`)
+        div(class="col-md-10 col-sm-12 mt-3")
+          div(class="row text-center")
+            include result-list

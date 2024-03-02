@@ -18,7 +18,6 @@ export class UsuarioService {
       {nome: 'Weslei',email: 'teste@teste.com',celular: '00-11111-1111'},
       {nome: 'Weslei2222',email: 'teste@teste.com',celular: '00-11111-1111'}
     ]
-
     return data as Usuario[];
   }
 }

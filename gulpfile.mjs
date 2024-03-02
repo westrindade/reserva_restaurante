@@ -109,7 +109,8 @@ export function watchFiles(cb) {
 }
 
 // Run Browser Sync
-dotenv.config({ path: `.env.${process.env.NODE_ENV}`, debug: true, override: true });
+dotenv.config({ path: `.env.${process.env.NODE_ENV}`, encoding: 'utf8', debug: true, override: true });
+//dotenv.config({ path: `.env.${process.env.NODE_ENV}`, debug: true, override: true });
 export function browserSync() {
   return sync.init({
     port: 3000,

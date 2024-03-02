@@ -24,8 +24,10 @@ block content
               input#celular.form-control.form-control-sm(type="tel", name="celular", placeholder="(99) 99999-9999", required)
               span.input-group-text(data-bs-toggle="tooltip", data-bs-placement="top", title="Exemplo: (99) 99999-9999") (99) 99999-9999
           div.d-grid.gap-2
-            button.btn.btn-primary.btn-sm(type="submit") Cadastrar
-            a.btn.btn-danger.btn-sm(type="button", href="/usuario/consultar") Cancelar
+            button(id="btnCadastrar" type="button" class="btn btn-outline-primary" onclick="onConsult()") Cadastrar&nbsp;&nbsp;
+            a(id="btnCancelar" type="button" class="btn btn-outline-danger" href="/usuario/consultar") Cancelar&nbsp;&nbsp;
+            //- button.btn.btn-primary.btn-sm(type="submit") Cadastrar
+            //- a.btn.btn-danger.btn-sm(type="button", href="/usuario/consultar") Cancelar
     script.
       document.addEventListener('DOMContentLoaded', function () {
         // Inicializar o Bootstrap Tooltip
