@@ -1,0 +1,35 @@
+extends ../../layout
+
+block content
+  body.bg-light.text-dark
+
+    include ../../header
+    hr
+
+    section
+      div.container
+        h2.text-center Cadastrar Usuário
+        form
+          div.mb-3
+            label.form-label(for="nome") Nome
+            input.form-control.form-control-sm(type="text", id="nome", name="nome", required)
+          div.mb-3
+            label.form-label(for="email") Email
+            div.input-group
+              input#email.form-control.form-control-sm(type="email", name="email", placeholder="SeuEmail@exemplo.com", required)
+              span.input-group-text(data-bs-toggle="tooltip", data-bs-placement="top", title="Exemplo: SeuEmail@exemplo.com") @exemplo.com
+          div.mb-3
+            label.form-label(for="celular") Celular
+            div.input-group
+              input#celular.form-control.form-control-sm(type="tel", name="celular", placeholder="(99) 99999-9999", required)
+              span.input-group-text(data-bs-toggle="tooltip", data-bs-placement="top", title="Exemplo: (99) 99999-9999") (99) 99999-9999
+          div.d-grid.gap-2
+            button.btn.btn-primary.btn-sm(type="submit") Cadastrar
+            a.btn.btn-danger.btn-sm(type="button", href="/usuario/consultar") Cancelar
+    script.
+      document.addEventListener('DOMContentLoaded', function () {
+        // Inicializar o Bootstrap Tooltip
+        var tooltips = new bootstrap.Tooltip(document.body, {
+          selector: '[data-bs-toggle="tooltip"]'
+        });
+      });

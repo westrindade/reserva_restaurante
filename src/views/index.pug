@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  body.bg-dark.text-light
+
+    header
+      nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+        div.container-fluid
+          a.navbar-brand(href="#") Reserva Rápida
+          button.navbar-toggler(type="button", data-bs-toggle="collapse", data-bs-target="#navbarNav", aria-controls="navbarNav", aria-expanded="false", aria-label="Toggle navigation")
+            span.navbar-toggler-icon
+          div.collapse.navbar-collapse#navbarNav
+            ul.navbar-nav.ms-auto
+              li.nav-item
+                a.nav-link.active(href="#") Início
+              li.nav-item
+                a.nav-link(href="#sobre") Sobre
+              li.nav-item
+                a.nav-link(href="#contato") Contato
+
+    section#banner
+      div.container
+        div.row.align-items-center
+          div.col-md-6.text-center.text-md-start
+            h1(display-1 Sistema de Reserva de<br) Restaurante
+            p.lead.white-text
+              | Experimente a conveniência de nosso sistema de reserva online. 
+              | Garanta sua mesa em apenas alguns cliques e aproveite uma experiência gastronômica incrível.
+          div.col-md-6.text-center
+            img.img-fluid.rounded(src="images/atendendo-telefone.jpeg", alt="Imagem de Reserva")
+
+    section#reserva
+      div.container.text-center
+        h2(Faça Sua Reserva.white-text)
+        p.lead.white-text
+          | Faça sua reserva agora e garanta o melhor lugar para aproveitar uma refeição deliciosa.
+        a.btn.btn-primary.btn-lg(href="/usuario/consultar") Faça sua Reserva

@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+  body.bg-light.text-dark
+
+    include ../header
+    hr
+
+    section
+      div.container
+        h2.text-center Buscar Usuário
+
+        form(id="buscarForm")
+          .mb-3
+            label.form-label(for="email") Email
+            .input-group
+              input#email.form-control(type="email", name="email", placeholder="SeuEmail@exemplo.com", required)
+              span.input-group-text(data-bs-toggle="tooltip", data-bs-placement="top", title="Exemplo: SeuEmail@exemplo.com") @exemplo.com
+
+          .d-grid.gap-2
+            button#buscarBtn.btn.btn-primary.btn-sm(type="button", style="width: 100%" onclick="onConsult()") Buscar
+            a.btn.btn-success.btn-sm(href="form/cadastrar", style="width: 100%") Novo Usuário
+            a.btn.btn-danger.btn-sm(type="button", href="/", style="width: 100%") Cancelar
+
+        //include result-list
+
+        //- script(src="/public/js/app/usuario.js")
